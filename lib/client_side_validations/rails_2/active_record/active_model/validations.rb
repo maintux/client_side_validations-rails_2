@@ -41,7 +41,12 @@ require 'client_side_validations/rails_2/active_record/active_model/validations/
   MODULE
 end
 
-require 'client_side_validations/rails_2/active_record/active_model/validations/numericality'
+%w{
+  length
+  numericality
+}.each do |validator|
+  require "client_side_validations/rails_2/active_record/active_model/validations/#{validator}"
+end
 
 module ActiveModel::Validations::ClassMethods
   def validates_size_of(*attr_names)
