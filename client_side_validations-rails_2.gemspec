@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.add_dependency 'activesupport', '~> 2.3.0'
-  s.add_dependency 'client_side_validations', '~> 3.0.11'
+  s.add_dependency 'client_side_validations', '~> 3.0.12'
 
   s.add_development_dependency 'activerecord', '~> 2.3.0'
   s.add_development_dependency 'actionpack',   '~> 2.3.0'
