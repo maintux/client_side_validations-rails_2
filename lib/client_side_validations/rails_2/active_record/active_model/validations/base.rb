@@ -23,3 +23,4 @@ module ActiveModel::Validations
     end
   end
 end
+

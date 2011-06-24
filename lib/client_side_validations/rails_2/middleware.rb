@@ -20,3 +20,4 @@ if defined?(Rails)
     Rails.configuration.middleware.use ClientSideValidations::Middleware::Validators
   end
 end
+

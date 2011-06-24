@@ -40,3 +40,4 @@ module ClientSideValidations::ActiveRecord
     end
   end
 end
+
