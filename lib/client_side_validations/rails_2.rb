@@ -1,4 +1,6 @@
-module ClientSideValidations::Rails2; end
+module ClientSideValidations
+  module Rails2; end
+end
 
 require 'client_side_validations/rails_2/middleware'
 require 'client_side_validations/rails_2/action_view'
