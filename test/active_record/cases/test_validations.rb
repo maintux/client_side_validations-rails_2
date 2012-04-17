@@ -101,6 +101,23 @@ class ValidationsTest < ClientSideValidations::ActiveRecordTestBase
     assert_equal expected_hash, user.client_side_validation_hash
   end
 
+  def test_length_with_range_validation_to_client_side_hash
+    user = new_user do |p|
+      p.validates_length_of :name, :in => 1..3, :wrong_length=>"is the wrong length (should be within 1 and 3 characters)"
+    end
+    expected_hash = {
+      :name => {
+        :length => {
+          :messages => {
+            :in => "is the wrong length (should be within 1 and 3 characters)"
+          },
+          :in => 1..3
+        }
+      }
+    }
+    assert_equal expected_hash, user.client_side_validation_hash
+  end
+
   def test_numericality_validation_to_client_side_hash
     user = new_user do |p|
       p.validates_numericality_of :name
