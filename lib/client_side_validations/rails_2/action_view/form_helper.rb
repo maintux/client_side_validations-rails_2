@@ -3,7 +3,8 @@ module ClientSideValidations::Rails2::ActionView::Helpers
     def form_for(record_or_name_or_array, *args, &proc)
       html = super
       if match = html.match(/<script data-csv.+$/)
-        concat(match[0])
+        splitted = html.split('<script data-csv')
+        concat('<script data-csv'+splitted.last)
       end
     end
   end
